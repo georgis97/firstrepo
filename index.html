@@ -1,27 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Title</title>
     <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous">
-
     </script>
 
-    <!--<script src="jquery-3.5.1.min.js"></script>-->
-    <script src="utmDetector.js"></script>
-    <script src="leaderboard.js"></script>
+    <script>
+        if (window.location.href.indexOf("utm") >= 0)
+        {
+            console.log("utm is in url");
+            $.getScript( "ads/seznam_leaderboard.js" )
+                .done(function( script, textStatus ) {
+                    console.log("Leaderboard loading " + textStatus );
+                });
+        }
+        else {
+            console.log("utm is not in url");
+            $.getScript( "ads/leaderboard.js" )
+                .done(function( script, textStatus ) {
+                    console.log("Leaderboard loading " + textStatus );
+                });
+        }
+    </script>
+
+    <!-- http://127.0.0.1/firstrepo/index.html?utm_source=www.seznam.cz&utm_medium=sekce-z-internetu -->
+    <!--<script src="utmDetector.js"></script>-->
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrapper">
-    <div id="leaderboard">fsd</div>
-    <h1>Page title</h1>
+<div id="leaderboard"></div>
+
+<div id="navwrp">
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">OUR TEAM</a></li>
+            <li><a href="#">OUR SERVICES</a></li>
+            <li><a href="#">OUR OFFICES</a></li>
+            <li><a href="#">GET IN TOUCH</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="clear"></div>
+<div class="h1">
+    <h1>
+        BUSINESS WEBSITE
+    </h1>
+    <div id="contact">info@youremailadress.com // phone: +99073345234</div>
+</div>
+    <aside>
+        dcsdcdcsd
+
+    </aside>
+
+
+<div id="firstpage">
+sdsd
 
 
 </div>
+
+</div>
+
 </body>
 </html>
